@@ -500,6 +500,140 @@ pub trait HasContext: __private::Sealed {
         v: &[f32],
     );
 
+    unsafe fn program_uniform_1_f64(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        x: f64,
+    );
+
+    unsafe fn program_uniform_2_f64(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        x: f64,
+        y: f64,
+    );
+
+    unsafe fn program_uniform_3_f64(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        x: f64,
+        y: f64,
+        z: f64,
+    );
+
+    unsafe fn program_uniform_4_f64(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        x: f64,
+        y: f64,
+        z: f64,
+        w: f64,
+    );
+
+    unsafe fn program_uniform_1_f64_slice(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        v: &[f64],
+    );
+
+    unsafe fn program_uniform_2_f64_slice(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        v: &[f64],
+    );
+
+    unsafe fn program_uniform_3_f64_slice(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        v: &[f64],
+    );
+
+    unsafe fn program_uniform_4_f64_slice(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        v: &[f64],
+    );
+
+    unsafe fn program_uniform_matrix_2_f64_slice(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    );
+
+    unsafe fn program_uniform_matrix_2x3_f64_slice(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    );
+
+    unsafe fn program_uniform_matrix_2x4_f64_slice(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    );
+
+    unsafe fn program_uniform_matrix_3x2_f64_slice(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    );
+
+    unsafe fn program_uniform_matrix_3_f64_slice(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    );
+
+    unsafe fn program_uniform_matrix_3x4_f64_slice(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    );
+
+    unsafe fn program_uniform_matrix_4x2_f64_slice(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    );
+
+    unsafe fn program_uniform_matrix_4x3_f64_slice(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    );
+
+    unsafe fn program_uniform_matrix_4_f64_slice(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    );
+
     unsafe fn program_binary_retrievable_hint(&self, program: Self::Program, value: bool);
 
     unsafe fn get_program_binary(&self, program: Self::Program) -> Option<ProgramBinary>;
@@ -1307,6 +1441,13 @@ pub trait HasContext: __private::Sealed {
         v: &mut [f32],
     );
 
+    unsafe fn get_uniform_f64(
+        &self,
+        program: Self::Program,
+        location: &Self::UniformLocation,
+        v: &mut [f64],
+    );
+
     unsafe fn uniform_1_i32(&self, location: Option<&Self::UniformLocation>, x: i32);
 
     unsafe fn uniform_2_i32(&self, location: Option<&Self::UniformLocation>, x: i32, y: i32);
@@ -1455,6 +1596,98 @@ pub trait HasContext: __private::Sealed {
         location: Option<&Self::UniformLocation>,
         transpose: bool,
         v: &[f32],
+    );
+
+    unsafe fn uniform_1_f64(&self, location: Option<&Self::UniformLocation>, x: f64);
+
+    unsafe fn uniform_2_f64(&self, location: Option<&Self::UniformLocation>, x: f64, y: f64);
+
+    unsafe fn uniform_3_f64(
+        &self,
+        location: Option<&Self::UniformLocation>,
+        x: f64,
+        y: f64,
+        z: f64,
+    );
+
+    unsafe fn uniform_4_f64(
+        &self,
+        location: Option<&Self::UniformLocation>,
+        x: f64,
+        y: f64,
+        z: f64,
+        w: f64,
+    );
+
+    unsafe fn uniform_1_f64_slice(&self, location: Option<&Self::UniformLocation>, v: &[f64]);
+
+    unsafe fn uniform_2_f64_slice(&self, location: Option<&Self::UniformLocation>, v: &[f64]);
+
+    unsafe fn uniform_3_f64_slice(&self, location: Option<&Self::UniformLocation>, v: &[f64]);
+
+    unsafe fn uniform_4_f64_slice(&self, location: Option<&Self::UniformLocation>, v: &[f64]);
+
+    unsafe fn uniform_matrix_2_f64_slice(
+        &self,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    );
+
+    unsafe fn uniform_matrix_2x3_f64_slice(
+        &self,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    );
+
+    unsafe fn uniform_matrix_2x4_f64_slice(
+        &self,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    );
+
+    unsafe fn uniform_matrix_3x2_f64_slice(
+        &self,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    );
+
+    unsafe fn uniform_matrix_3_f64_slice(
+        &self,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    );
+
+    unsafe fn uniform_matrix_3x4_f64_slice(
+        &self,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    );
+
+    unsafe fn uniform_matrix_4x2_f64_slice(
+        &self,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    );
+
+    unsafe fn uniform_matrix_4x3_f64_slice(
+        &self,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    );
+
+    unsafe fn uniform_matrix_4_f64_slice(
+        &self,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
     );
 
     unsafe fn unmap_buffer(&self, target: u32);

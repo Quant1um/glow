@@ -1074,6 +1074,294 @@ impl HasContext for Context {
         }
     }
 
+    unsafe fn program_uniform_1_f64(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        x: f64,
+    ) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.ProgramUniform1d(program.0.get(), loc.0 as i32, x);
+        }
+    }
+
+    unsafe fn program_uniform_2_f64(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        x: f64,
+        y: f64,
+    ) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.ProgramUniform2d(program.0.get(), loc.0 as i32, x, y);
+        }
+    }
+
+    unsafe fn program_uniform_3_f64(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        x: f64,
+        y: f64,
+        z: f64,
+    ) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.ProgramUniform3d(program.0.get(), loc.0 as i32, x, y, z);
+        }
+    }
+
+    unsafe fn program_uniform_4_f64(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        x: f64,
+        y: f64,
+        z: f64,
+        w: f64,
+    ) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.ProgramUniform4d(program.0.get(), loc.0 as i32, x, y, z, w);
+        }
+    }
+
+    unsafe fn program_uniform_1_f64_slice(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        v: &[f64],
+    ) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.ProgramUniform1dv(program.0.get(), loc.0 as i32, v.len() as i32, v.as_ptr());
+        }
+    }
+
+    unsafe fn program_uniform_2_f64_slice(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        v: &[f64],
+    ) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.ProgramUniform2dv(
+                program.0.get(),
+                loc.0 as i32,
+                v.len() as i32 / 2,
+                v.as_ptr(),
+            );
+        }
+    }
+
+    unsafe fn program_uniform_3_f64_slice(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        v: &[f64],
+    ) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.ProgramUniform3dv(
+                program.0.get(),
+                loc.0 as i32,
+                v.len() as i32 / 3,
+                v.as_ptr(),
+            );
+        }
+    }
+
+    unsafe fn program_uniform_4_f64_slice(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        v: &[f64],
+    ) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.ProgramUniform4dv(
+                program.0.get(),
+                loc.0 as i32,
+                v.len() as i32 / 4,
+                v.as_ptr(),
+            );
+        }
+    }
+
+    unsafe fn program_uniform_matrix_2_f64_slice(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    ) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.ProgramUniformMatrix2dv(
+                program.0.get(),
+                loc.0 as i32,
+                v.len() as i32 / 4,
+                transpose as u8,
+                v.as_ptr(),
+            );
+        }
+    }
+
+    unsafe fn program_uniform_matrix_2x3_f64_slice(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    ) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.ProgramUniformMatrix2x3dv(
+                program.0.get(),
+                loc.0 as i32,
+                v.len() as i32 / 6,
+                transpose as u8,
+                v.as_ptr(),
+            );
+        }
+    }
+
+    unsafe fn program_uniform_matrix_2x4_f64_slice(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    ) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.ProgramUniformMatrix2x4dv(
+                program.0.get(),
+                loc.0 as i32,
+                v.len() as i32 / 8,
+                transpose as u8,
+                v.as_ptr(),
+            );
+        }
+    }
+
+    unsafe fn program_uniform_matrix_3x2_f64_slice(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    ) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.ProgramUniformMatrix3x2dv(
+                program.0.get(),
+                loc.0 as i32,
+                v.len() as i32 / 6,
+                transpose as u8,
+                v.as_ptr(),
+            );
+        }
+    }
+
+    unsafe fn program_uniform_matrix_3_f64_slice(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    ) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.ProgramUniformMatrix3dv(
+                program.0.get(),
+                loc.0 as i32,
+                v.len() as i32 / 9,
+                transpose as u8,
+                v.as_ptr(),
+            );
+        }
+    }
+
+    unsafe fn program_uniform_matrix_3x4_f64_slice(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    ) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.ProgramUniformMatrix3x4dv(
+                program.0.get(),
+                loc.0 as i32,
+                v.len() as i32 / 12,
+                transpose as u8,
+                v.as_ptr(),
+            );
+        }
+    }
+
+    unsafe fn program_uniform_matrix_4x2_f64_slice(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    ) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.ProgramUniformMatrix4x2dv(
+                program.0.get(),
+                loc.0 as i32,
+                v.len() as i32 / 8,
+                transpose as u8,
+                v.as_ptr(),
+            );
+        }
+    }
+
+    unsafe fn program_uniform_matrix_4x3_f64_slice(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    ) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.ProgramUniformMatrix4x3dv(
+                program.0.get(),
+                loc.0 as i32,
+                v.len() as i32 / 12,
+                transpose as u8,
+                v.as_ptr(),
+            );
+        }
+    }
+
+    unsafe fn program_uniform_matrix_4_f64_slice(
+        &self,
+        program: Self::Program,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    ) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.ProgramUniformMatrix4dv(
+                program.0.get(),
+                loc.0 as i32,
+                v.len() as i32 / 16,
+                transpose as u8,
+                v.as_ptr(),
+            );
+        }
+    }
+
     unsafe fn program_binary_retrievable_hint(&self, program: Self::Program, value: bool) {
         let gl = &self.raw;
         gl.ProgramParameteri(
@@ -2878,6 +3166,16 @@ impl HasContext for Context {
         gl.GetUniformfv(program.0.get(), location.0 as i32, v.as_mut_ptr())
     }
 
+    unsafe fn get_uniform_f64(
+        &self,
+        program: Self::Program,
+        location: &Self::UniformLocation,
+        v: &mut [f64],
+    ) {
+        let gl = &self.raw;
+        gl.GetUniformdv(program.0.get(), location.0 as i32, v.as_mut_ptr())
+    }
+
     unsafe fn uniform_1_i32(&self, location: Option<&Self::UniformLocation>, x: i32) {
         let gl = &self.raw;
         if let Some(loc) = location {
@@ -3230,6 +3528,228 @@ impl HasContext for Context {
         let gl = &self.raw;
         if let Some(loc) = location {
             gl.UniformMatrix4fv(
+                loc.0 as i32,
+                v.len() as i32 / 16,
+                transpose as u8,
+                v.as_ptr(),
+            );
+        }
+    }
+
+    unsafe fn uniform_1_f64(&self, location: Option<&Self::UniformLocation>, x: f64) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.Uniform1d(loc.0 as i32, x);
+        }
+    }
+
+    unsafe fn uniform_2_f64(&self, location: Option<&Self::UniformLocation>, x: f64, y: f64) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.Uniform2d(loc.0 as i32, x, y);
+        }
+    }
+
+    unsafe fn uniform_3_f64(
+        &self,
+        location: Option<&Self::UniformLocation>,
+        x: f64,
+        y: f64,
+        z: f64,
+    ) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.Uniform3d(loc.0 as i32, x, y, z);
+        }
+    }
+
+    unsafe fn uniform_4_f64(
+        &self,
+        location: Option<&Self::UniformLocation>,
+        x: f64,
+        y: f64,
+        z: f64,
+        w: f64,
+    ) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.Uniform4d(loc.0 as i32, x, y, z, w);
+        }
+    }
+
+    unsafe fn uniform_1_f64_slice(&self, location: Option<&Self::UniformLocation>, v: &[f64]) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.Uniform1dv(loc.0 as i32, v.len() as i32, v.as_ptr());
+        }
+    }
+
+    unsafe fn uniform_2_f64_slice(&self, location: Option<&Self::UniformLocation>, v: &[f64]) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.Uniform2dv(loc.0 as i32, v.len() as i32 / 2, v.as_ptr());
+        }
+    }
+
+    unsafe fn uniform_3_f64_slice(&self, location: Option<&Self::UniformLocation>, v: &[f64]) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.Uniform3dv(loc.0 as i32, v.len() as i32 / 3, v.as_ptr());
+        }
+    }
+
+    unsafe fn uniform_4_f64_slice(&self, location: Option<&Self::UniformLocation>, v: &[f64]) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.Uniform4dv(loc.0 as i32, v.len() as i32 / 4, v.as_ptr());
+        }
+    }
+
+    unsafe fn uniform_matrix_2_f64_slice(
+        &self,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    ) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.UniformMatrix2dv(
+                loc.0 as i32,
+                v.len() as i32 / 4,
+                transpose as u8,
+                v.as_ptr(),
+            );
+        }
+    }
+
+    unsafe fn uniform_matrix_2x3_f64_slice(
+        &self,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    ) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.UniformMatrix2x3dv(
+                loc.0 as i32,
+                v.len() as i32 / 6,
+                transpose as u8,
+                v.as_ptr(),
+            );
+        }
+    }
+
+    unsafe fn uniform_matrix_2x4_f64_slice(
+        &self,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    ) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.UniformMatrix2x4dv(
+                loc.0 as i32,
+                v.len() as i32 / 8,
+                transpose as u8,
+                v.as_ptr(),
+            );
+        }
+    }
+
+    unsafe fn uniform_matrix_3x2_f64_slice(
+        &self,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    ) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.UniformMatrix3x2dv(
+                loc.0 as i32,
+                v.len() as i32 / 6,
+                transpose as u8,
+                v.as_ptr(),
+            );
+        }
+    }
+
+    unsafe fn uniform_matrix_3_f64_slice(
+        &self,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    ) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.UniformMatrix3dv(
+                loc.0 as i32,
+                v.len() as i32 / 9,
+                transpose as u8,
+                v.as_ptr(),
+            );
+        }
+    }
+
+    unsafe fn uniform_matrix_3x4_f64_slice(
+        &self,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    ) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.UniformMatrix3x4dv(
+                loc.0 as i32,
+                v.len() as i32 / 12,
+                transpose as u8,
+                v.as_ptr(),
+            );
+        }
+    }
+
+    unsafe fn uniform_matrix_4x2_f64_slice(
+        &self,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    ) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.UniformMatrix4x2dv(
+                loc.0 as i32,
+                v.len() as i32 / 8,
+                transpose as u8,
+                v.as_ptr(),
+            );
+        }
+    }
+
+    unsafe fn uniform_matrix_4x3_f64_slice(
+        &self,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    ) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.UniformMatrix4x3dv(
+                loc.0 as i32,
+                v.len() as i32 / 12,
+                transpose as u8,
+                v.as_ptr(),
+            );
+        }
+    }
+
+    unsafe fn uniform_matrix_4_f64_slice(
+        &self,
+        location: Option<&Self::UniformLocation>,
+        transpose: bool,
+        v: &[f64],
+    ) {
+        let gl = &self.raw;
+        if let Some(loc) = location {
+            gl.UniformMatrix4dv(
                 loc.0 as i32,
                 v.len() as i32 / 16,
                 transpose as u8,

@@ -2382,6 +2382,174 @@ impl HasContext for Context {
         panic!("DSA program objects are not supported")
     }
 
+    unsafe fn program_uniform_1_f64(
+        &self,
+        _program: Self::Program,
+        _location: Option<&Self::UniformLocation>,
+        _x: f64,
+    ) {
+        panic!("DSA program objects are not supported")
+    }
+
+    unsafe fn program_uniform_2_f64(
+        &self,
+        _program: Self::Program,
+        _location: Option<&Self::UniformLocation>,
+        _x: f64,
+        _y: f64,
+    ) {
+        panic!("DSA program objects are not supported")
+    }
+
+    unsafe fn program_uniform_3_f64(
+        &self,
+        _program: Self::Program,
+        _location: Option<&Self::UniformLocation>,
+        _x: f64,
+        _y: f64,
+        _z: f64,
+    ) {
+        panic!("DSA program objects are not supported")
+    }
+
+    unsafe fn program_uniform_4_f64(
+        &self,
+        _program: Self::Program,
+        _location: Option<&Self::UniformLocation>,
+        _x: f64,
+        _y: f64,
+        _z: f64,
+        _w: f64,
+    ) {
+        panic!("DSA program objects are not supported")
+    }
+
+    unsafe fn program_uniform_1_f64_slice(
+        &self,
+        _program: Self::Program,
+        _location: Option<&Self::UniformLocation>,
+        _v: &[f64],
+    ) {
+        panic!("DSA program objects are not supported")
+    }
+
+    unsafe fn program_uniform_2_f64_slice(
+        &self,
+        _program: Self::Program,
+        _location: Option<&Self::UniformLocation>,
+        _v: &[f64],
+    ) {
+        panic!("DSA program objects are not supported")
+    }
+
+    unsafe fn program_uniform_3_f64_slice(
+        &self,
+        _program: Self::Program,
+        _location: Option<&Self::UniformLocation>,
+        _v: &[f64],
+    ) {
+        panic!("DSA program objects are not supported")
+    }
+
+    unsafe fn program_uniform_4_f64_slice(
+        &self,
+        _program: Self::Program,
+        _location: Option<&Self::UniformLocation>,
+        _v: &[f64],
+    ) {
+        panic!("DSA program objects are not supported")
+    }
+
+    unsafe fn program_uniform_matrix_2_f64_slice(
+        &self,
+        _program: Self::Program,
+        _location: Option<&Self::UniformLocation>,
+        _transpose: bool,
+        _v: &[f64],
+    ) {
+        panic!("DSA program objects are not supported")
+    }
+
+    unsafe fn program_uniform_matrix_2x3_f64_slice(
+        &self,
+        _program: Self::Program,
+        _location: Option<&Self::UniformLocation>,
+        _transpose: bool,
+        _v: &[f64],
+    ) {
+        panic!("DSA program objects are not supported")
+    }
+
+    unsafe fn program_uniform_matrix_2x4_f64_slice(
+        &self,
+        _program: Self::Program,
+        _location: Option<&Self::UniformLocation>,
+        _transpose: bool,
+        _v: &[f64],
+    ) {
+        panic!("DSA program objects are not supported")
+    }
+
+    unsafe fn program_uniform_matrix_3x2_f64_slice(
+        &self,
+        _program: Self::Program,
+        _location: Option<&Self::UniformLocation>,
+        _transpose: bool,
+        _v: &[f64],
+    ) {
+        panic!("DSA program objects are not supported")
+    }
+
+    unsafe fn program_uniform_matrix_3_f64_slice(
+        &self,
+        _program: Self::Program,
+        _location: Option<&Self::UniformLocation>,
+        _transpose: bool,
+        _v: &[f64],
+    ) {
+        panic!("DSA program objects are not supported")
+    }
+
+    unsafe fn program_uniform_matrix_3x4_f64_slice(
+        &self,
+        _program: Self::Program,
+        _location: Option<&Self::UniformLocation>,
+        _transpose: bool,
+        _v: &[f64],
+    ) {
+        panic!("DSA program objects are not supported")
+    }
+
+    unsafe fn program_uniform_matrix_4x2_f64_slice(
+        &self,
+        _program: Self::Program,
+        _location: Option<&Self::UniformLocation>,
+        _transpose: bool,
+        _v: &[f64],
+    ) {
+        panic!("DSA program objects are not supported")
+    }
+
+    unsafe fn program_uniform_matrix_4x3_f64_slice(
+        &self,
+        _program: Self::Program,
+        _location: Option<&Self::UniformLocation>,
+        _transpose: bool,
+        _v: &[f64],
+    ) {
+        panic!("DSA program objects are not supported")
+    }
+
+    unsafe fn program_uniform_matrix_4_f64_slice(
+        &self,
+        _program: Self::Program,
+        _location: Option<&Self::UniformLocation>,
+        _transpose: bool,
+        _v: &[f64],
+    ) {
+        panic!("DSA program objects are not supported")
+    }
+
     unsafe fn get_active_uniforms(&self, program: Self::Program) -> u32 {
         let programs = self.programs.borrow();
         let raw_program = programs.get_unchecked(program);
@@ -4805,6 +4973,132 @@ impl HasContext for Context {
         }
     }
 
+    unsafe fn uniform_1_f64(&self, _location: Option<&Self::UniformLocation>, _x: f64) {
+        panic!("f64 uniforms are not supported");
+    }
+
+    unsafe fn uniform_2_f64(&self, _location: Option<&Self::UniformLocation>, _x: f64, _y: f64) {
+        panic!("f64 uniforms are not supported");
+    }
+
+    unsafe fn uniform_3_f64(
+        &self,
+        _location: Option<&Self::UniformLocation>,
+        _x: f64,
+        _y: f64,
+        _z: f64,
+    ) {
+        panic!("f64 uniforms are not supported");
+    }
+
+    unsafe fn uniform_4_f64(
+        &self,
+        _location: Option<&Self::UniformLocation>,
+        _x: f64,
+        _y: f64,
+        _z: f64,
+        _w: f64,
+    ) {
+        panic!("f64 uniforms are not supported");
+    }
+
+    unsafe fn uniform_1_f64_slice(&self, _location: Option<&Self::UniformLocation>, _v: &[f64]) {
+        panic!("f64 uniforms are not supported");
+    }
+
+    unsafe fn uniform_2_f64_slice(&self, _location: Option<&Self::UniformLocation>, _v: &[f64]) {
+        panic!("f64 uniforms are not supported");
+    }
+
+    unsafe fn uniform_3_f64_slice(&self, _location: Option<&Self::UniformLocation>, _v: &[f64]) {
+        panic!("f64 uniforms are not supported");
+    }
+
+    unsafe fn uniform_4_f64_slice(&self, _location: Option<&Self::UniformLocation>, _v: &[f64]) {
+        panic!("f64 uniforms are not supported");
+    }
+
+    unsafe fn uniform_matrix_2_f64_slice(
+        &self,
+        _location: Option<&Self::UniformLocation>,
+        _transpose: bool,
+        _v: &[f64],
+    ) {
+        panic!("f64 uniforms are not supported");
+    }
+
+    unsafe fn uniform_matrix_2x3_f64_slice(
+        &self,
+        _location: Option<&Self::UniformLocation>,
+        _transpose: bool,
+        _v: &[f64],
+    ) {
+        panic!("f64 uniforms are not supported");
+    }
+
+    unsafe fn uniform_matrix_2x4_f64_slice(
+        &self,
+        _location: Option<&Self::UniformLocation>,
+        _transpose: bool,
+        _v: &[f64],
+    ) {
+        panic!("f64 uniforms are not supported");
+    }
+
+    unsafe fn uniform_matrix_3x2_f64_slice(
+        &self,
+        _location: Option<&Self::UniformLocation>,
+        _transpose: bool,
+        _v: &[f64],
+    ) {
+        panic!("f64 uniforms are not supported");
+    }
+
+    unsafe fn uniform_matrix_3_f64_slice(
+        &self,
+        _location: Option<&Self::UniformLocation>,
+        _transpose: bool,
+        _v: &[f64],
+    ) {
+        panic!("f64 uniforms are not supported");
+    }
+
+    unsafe fn uniform_matrix_3x4_f64_slice(
+        &self,
+        _location: Option<&Self::UniformLocation>,
+        _transpose: bool,
+        _v: &[f64],
+    ) {
+        panic!("f64 uniforms are not supported");
+    }
+
+    unsafe fn uniform_matrix_4x2_f64_slice(
+        &self,
+        _location: Option<&Self::UniformLocation>,
+        _transpose: bool,
+        _v: &[f64],
+    ) {
+        panic!("f64 uniforms are not supported");
+    }
+
+    unsafe fn uniform_matrix_4x3_f64_slice(
+        &self,
+        _location: Option<&Self::UniformLocation>,
+        _transpose: bool,
+        _v: &[f64],
+    ) {
+        panic!("f64 uniforms are not supported");
+    }
+
+    unsafe fn uniform_matrix_4_f64_slice(
+        &self,
+        _location: Option<&Self::UniformLocation>,
+        _transpose: bool,
+        _v: &[f64],
+    ) {
+        panic!("f64 uniforms are not supported");
+    }
+
     unsafe fn unmap_buffer(&self, _target: u32) {
         panic!("Unmap buffer is not supported");
     }
@@ -5938,6 +6232,15 @@ impl HasContext for Context {
         } else if let Some(values) = value.dyn_ref::<js_sys::Float32Array>() {
             values.copy_to(v)
         }
+    }
+
+    unsafe fn get_uniform_f64(
+        &self,
+        _program: Self::Program,
+        _location: &Self::UniformLocation,
+        _v: &mut [f64],
+    ) {
+        panic!("f64 uniforms are not supported")
     }
 
     unsafe fn begin_query(&self, target: u32, query: Self::Query) {
